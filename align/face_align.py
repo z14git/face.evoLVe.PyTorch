@@ -23,6 +23,7 @@ if __name__ == '__main__':
     cwd = os.getcwd() # delete '.DS_Store' existed in the source_root
     os.chdir(source_root)
     os.system("find . -name '*.DS_Store' -type f -delete")
+    os.system("find . -name '*.ipynb_checkpoints' -prune -exec rm -rf {} \;")
     os.chdir(cwd)
 
     if not os.path.isdir(dest_root):
